@@ -1,4 +1,5 @@
-import React, { useCallback, useEffect, useState } from 'react'
+import React, { useCallback, useEffect, useState} from 'react'
+import { Link } from 'react-router-dom'
 import {FaGithub, FaPlus, FaSpinner, FaBars, FaTrash } from 'react-icons/fa'
 
 import { Container, Form, SubmitButton, List, DeleteRepo } from './styles'
@@ -122,9 +123,9 @@ const Main = () => {
                 </DeleteRepo>
                 {repo.name}
               </span>
-              <a href=''>
-                <FaBars size={20} />
-              </a>
+              <Link to={`/repositorio/${encodeURIComponent(repo.name)}`}>
+                  <FaBars size={20} />
+              </Link>
             </li>
           ))}
 
